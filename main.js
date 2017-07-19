@@ -32,7 +32,7 @@ fetch("https://crossorigin.me/http://www.recipepuppy.com/api/?q=puppy")
 
           instances.innerHTML +=`
       <section class=recipe><h2>${data.results[i].title}</h2>
-      <img class="recipeImage"></img>
+      <img src=${data.results[i].thumbnail} class="recipeImage"></img>
       <h3>${data.results[i].ingredients}</h3>
       // </section>`;
    };
