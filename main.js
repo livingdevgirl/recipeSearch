@@ -9,13 +9,13 @@
 
 let instances = document.getElementById('instances');
 instances.innerHTML += ''
-fetch("https://crossorigin.me/http://www.recipepuppy.com/api/?q=puppy")
+fetch("https://crossorigin.me/http://www.recipepuppy.com/api/?q=avocado")
   .then(function(response){
   console.log(response.status)
 
 })
 
-fetch("https://crossorigin.me/http://www.recipepuppy.com/api/?q=puppy")
+fetch("https://crossorigin.me/http://www.recipepuppy.com/api/?q=avocado")
  // Data is fetched and we get a promise.
  .then(
   // The promise returns a response from the server.
@@ -31,7 +31,7 @@ fetch("https://crossorigin.me/http://www.recipepuppy.com/api/?q=puppy")
         for (let i = 0; i < data.results.length; i++) {
 
           instances.innerHTML +=`
-      <section class=recipe><h2>${data.results[i].title}</h2>
+      <section class=recipe><a href=${data.href}><h2>${data.results[i].title}</h2></a>
       <img src=${data.results[i].thumbnail} class="recipeImage"></img>
       <h3>${data.results[i].ingredients}</h3>
       // </section>`;
